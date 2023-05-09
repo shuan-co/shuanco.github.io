@@ -1,23 +1,37 @@
 <!doctype html>
 <html lang="en">
+
+  <!-- HEADER AREA -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shuan's Resume</title>
+
+    <!-- StyleSheet Links & Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
 
+  <!-- BODY AREA -->
   <body>
+
+    <!-- Background Video for Website -->
     <video autoplay muted loop id="bg-video">
       <source src="./resources/background.mp4" type="video/mp4">
     </video>
 
-    <div class="page-container">
+    <!-- Sub Page Container | For Design Purposes | Limits viewable size of UI -->
+    <div class="page-container" id="container">
+      <!-- 
+        Heiarchy: of page structure is based on, Navigation Toggler for layout.
+       -->
+
+      <!-- PAGE1: Considered as Home Page, No Further Functionality -->
       <div id="page1" class="page">
         <video src="./resources/home.mp4" class="video-background" autoplay muted loop></video>
       </div>
       
+      <!-- PAGE2: Considered as About Me Page, Interactable Page to view information about me -->
       <div id="page2" class="page" style="display: none;">
         <div style="height: 100%;">
           <video src="./resources/aboutme1.mp4" class="video-background aboutmevideos" id="aboutme1" style="display: block;" autoplay muted></video>
@@ -28,6 +42,7 @@
         </div>
       </div>
 
+      <!-- PAGE5: Considered as Links Page, Contains clickable elements for my Github and LinkedIn account -->
       <div id="page5" class="page" style="display: none;">
         <div style="height: 100%;">
           <video src="./resources/projects/1.mp4" class="video-background projectvideos" id="project1" style="display: block;" autoplay muted></video>
@@ -94,6 +109,7 @@
         </div>
       </div>
 
+      <!-- Navgiation Toggler, Will Reveal the Navigation Bar | Bootstrap Modified Implementation -->
       <nav class="navbar navbar-dark">
         <div class="container-fluid">
           <button class="navbar-toggler float-right" id="toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,8 +118,12 @@
         </div>
       </nav>
 
+      <!-- PAGE3: Considered as Skills Page, Contains some of skillsets I can provide to a company, Interactable Page -->
       <div id="page3" class="page" style="display:none; ">
+        <!-- GROUP OF INTERACTABLE LISTS -->
         <div class="accordion accordion-flush" id="accordionFlushExample" data-bs-theme="dark">
+
+          <!-- BACKEND SKILLS UNORDERED LIST -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -143,6 +163,8 @@
               </div>
             </div>
           </div>
+
+          <!-- FRONTEND SKILLS UNORDERED LIST -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -164,6 +186,8 @@
               </div>
             </div>
           </div>
+
+          <!-- FRAMEWORK SKILLS UNORDERED LIST -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
@@ -194,7 +218,8 @@
               </div>
             </div>
           </div>
-
+          
+          <!-- MACHINE LEARNING SKILLS UNOREDERED LIST -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
@@ -220,6 +245,7 @@
             </div>
           </div>
 
+          <!-- OTHER SKILLS UNORDERED LIST -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
@@ -249,6 +275,8 @@
           </div>
         </div>
       </div>
+
+      <!-- PAGE4: Considered as Projects Page, Contains some projects I have worked on, Similar to Page 2 as Interactable Page  -->
       <div id="page4" class="page" style="display:none; padding-top: 8vh;">
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
@@ -278,7 +306,7 @@
 
     </div>
 
-    
+    <!-- Modal Popout for Contact Email and EmailTO HREF -->
     <div class="modal fade" data-bs-theme="dark" tabindex="-1" id="staticBackdropLabel" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -298,6 +326,7 @@
       </div>
     </div>
     
+    <!-- Navigational Menu / Bar, That Appears when Navigation Toggler is pressed -->
     <div class="collapse fade" id="navbarToggleExternalContent">
       <div class=" p-5">
         <ul class="nav justify-content-center">
@@ -319,6 +348,7 @@
           <li class="nav-item">
             <button class="nav-link hover-menu-elements" id="contacts" data-bs-toggle="modal" data-bs-target="#staticBackdropLabel">Contact Me</a>
           </li>
+          <!-- Downloads my CV for viewing -->
           <li class="nav-item">
             <a href="./Download/shuancv.pdf" download style="text-decoration: none; color: lightseagreen;">
               <button class="nav-link hover-menu-elements" id="links">Download CV</a>
@@ -328,31 +358,33 @@
       </div>
     </div>
 
-    <audio id="hovermenu">
-      <source src="./resources/audio/hovermenu.mp3" type="audio/mp3">
-    </audio>
-
-
-    <audio id="openmenu">
-      <source src="./resources/audio/openmenu.mp3" type="audio/mp3">
-    </audio>
+    <!-- AUDIO / SOUND CUES FOR EFFECTS -->
 
     <audio id="selectoption">
       <source src="./resources/audio/selectoption.mp3" type="audio/mp3">
     </audio>
 
-    <audio id="bg-music" autoplay loop>
+    <audio id="bg-music" autoplay loop preload="auto">
       <source src="./resources/audio/backgroundmusic.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- Javascript for event listeners and frontend functionality and sound playing -->
     <script>
-      alert("Press [M] : Unmute / Mute Music!")
+      alert("Press [M] : Unmute/ Mute Music!\n"+
+            "Scroll Wheel [UP]: Previous View\n" +
+            "Scroll Wheel [DOWN]: Next View\n" +
+            "Press [D] or [S] or [Arrow Right] or [Arrow Down] : Next View\n" +
+            "Press [A] or [W] or [Arrow Up] or [Arrow Down] : Next View\n" +
+            "Not Mobile Friendly Website but simply click the view to go Next\n");
+
+      //  PAGE VARIABLES FOR NEXT VIEW //
       var aboutmeSection = false;
       var projectSection = false;
       var aboutmePage = 1;
       var projectPage = 1;
 
-      var hovermenu
+      // MENU FUNCTIONALITY, HIDING AND SHOWING COMPONENTS //
+      
       document.getElementById("home").addEventListener("click", () => {
         aboutmeSection = false;
         projectSection = false;
@@ -362,6 +394,7 @@
         }
         document.getElementById("page1").style.display = "block";
       });
+
       document.getElementById("aboutme").addEventListener("click", () => {
         var pages = document.getElementsByClassName("page");
         for (var i = 0; i < pages.length; i++) {
@@ -371,6 +404,38 @@
         projectSection = false;
         document.getElementById("page2").style.display = "block";
       });
+
+      document.getElementById("skills").addEventListener("click", () => {
+        var pages = document.getElementsByClassName("page");
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.display = "none";
+        }
+        aboutmeSection = false;
+        projectSection = false;
+        document.getElementById("page3").style.display = "block";
+      });
+
+      document.getElementById("links").addEventListener("click", () => {
+        var pages = document.getElementsByClassName("page");
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.display = "none";
+        }
+        aboutmeSection = false;
+        projectSection = false;
+        document.getElementById("page4").style.display = "block";
+      });
+
+      document.getElementById("projects").addEventListener("click", () => {
+        var pages = document.getElementsByClassName("page");
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.display = "none";
+        }
+        aboutmeSection = false;
+        projectSection = true;
+        document.getElementById("page5").style.display = "block";
+      });
+
+      // SCROLLWHEEL EVENT LISTENER | FOR PAGE VIEW UPDATE //
 
       window.addEventListener('wheel', event => {
         if (aboutmeSection){
@@ -412,38 +477,10 @@
         }
       });
 
-      document.getElementById("skills").addEventListener("click", () => {
-        var pages = document.getElementsByClassName("page");
-        for (var i = 0; i < pages.length; i++) {
-          pages[i].style.display = "none";
-        }
-        aboutmeSection = false;
-        projectSection = false;
-        document.getElementById("page3").style.display = "block";
-      });
-
-      document.getElementById("links").addEventListener("click", () => {
-        var pages = document.getElementsByClassName("page");
-        for (var i = 0; i < pages.length; i++) {
-          pages[i].style.display = "none";
-        }
-        aboutmeSection = false;
-        projectSection = false;
-        document.getElementById("page4").style.display = "block";
-      });
-
-      document.getElementById("projects").addEventListener("click", () => {
-        var pages = document.getElementsByClassName("page");
-        for (var i = 0; i < pages.length; i++) {
-          pages[i].style.display = "none";
-        }
-        aboutmeSection = false;
-        projectSection = true;
-        document.getElementById("page5").style.display = "block";
-      });
+      // SOUND CUE IMPLEMENTATION //
 
       document.getElementById("toggler").addEventListener("click", function() {
-        document.getElementById("openmenu").play();
+        document.getElementById("selectoption").play();
       });
 
       document.getElementById("mailto").addEventListener("click", function() {
@@ -458,25 +495,98 @@
 
       document.querySelectorAll(".accordion-button").forEach(function(element) {
         element.addEventListener("click", function() {
-          document.getElementById("hovermenu").play();
+          document.getElementById("selectoption").play();
         });
       });
 
       const bgMusic = document.getElementById('bg-music');
+      const selectoption = document.getElementById("selectoption");
       bgMusic.volume = 0.45; // set volume to 50%
 
+      // MUTE BACKGROUND MUSIC AMD PROVIDE KEYBOARD FUNCTIONALITY FOR MOVING VIEW PAGE | REASON: COMPATABILITY OF PEOPLE WHO MAY NOT HAVE SCROLL WHEEL
       document.addEventListener('keydown', function(event) {
-      if (event.key === 'm' || event.key === 'M') {
+        if (event.key === 'm' || event.key === 'M') {
           const bgMusic = document.getElementById('bg-music');
           if (bgMusic.paused) {
             bgMusic.play();
+            selectoption.volume = 1;
           } else {
             bgMusic.pause();
+            selectoption.volume = 0;
           }
+        }
+
+        if (aboutmeSection){
+          var aboutmevideos = document.getElementsByClassName("aboutmevideos");
+          for (var i = 0; i < aboutmevideos.length; i++) {
+            aboutmevideos[i].style.display = "none";
+          }
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === 'd' || event.key === 'D' || event.key === 's' || event.key === 'S') {
+            aboutmePage += 1
+            if (aboutmePage > 5){
+              aboutmePage = 1
+            }
+          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp' || event.key === 'a' || event.key === 'A' || event.key === 'w' || event.key === 'W') {
+            aboutmePage -= 1
+            if (aboutmePage < 1){
+              aboutmePage = 5
+            }
+          }
+          document.getElementById("aboutme" + aboutmePage).style.display = "block";
+        }
+        else if (projectSection){
+          var projectvideos = document.getElementsByClassName("projectvideos");
+          for (var i = 0; i < projectvideos.length; i++) {
+            projectvideos[i].style.display = "none";
+          }
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === 'd' || event.key === 'D' || event.key === 's' || event.key === 'S') {
+            projectPage += 1
+            if (projectPage > 31){
+              projectPage = 1
+            }
+          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp' || event.key === 'a' || event.key === 'A' || event.key === 'w' || event.key === 'W') {
+            projectPage -= 1
+            if (projectPage < 1){
+              projectPage = 31
+            }
+          }
+          document.getElementById("project" + projectPage).style.display = "block";
         }
       });
       
+      // TOUCH SCREEN DEVICE COMPATABILITY, HOWEVER, MOBILE PHONES ARE NOT RECCOMENDED OR ANYTHING WITH LOW RESOLUTION SCREENS. WEBSITE WAS NOT DESIGNED FOR ADAPTABILITY FOR SMALL SCREENS //
+      document.getElementById("container").addEventListener('touchstart', function() {
+        if (aboutmeSection){
+          var aboutmevideos = document.getElementsByClassName("aboutmevideos");
+          for (var i = 0; i < aboutmevideos.length; i++) {
+            aboutmevideos[i].style.display = "none";
+          }
+          aboutmePage += 1
+          if (aboutmePage > 5){
+            aboutmePage = 1
+          }
+          document.getElementById("aboutme" + aboutmePage).style.display = "block";
+        }
+        else if (projectSection){
+          var projectvideos = document.getElementsByClassName("projectvideos");
+          for (var i = 0; i < projectvideos.length; i++) {
+            projectvideos[i].style.display = "none";
+          }
+          projectPage += 1
+          if (projectPage > 5){
+            projectPage = 1
+          }
+          document.getElementById("project" + projectPage).style.display = "block";
+        }
+      });
+
+      // BACKGROUND MUSIC TO PLAY ON LOAD
+      if (bgMusic.paused) {
+        bgMusic.play();
+      }
     </script>
+
+    <!-- BOOSTRAP SCRIPT  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>

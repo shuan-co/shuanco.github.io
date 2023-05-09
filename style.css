@@ -1,9 +1,12 @@
+/* BODY STYLE PRESET, TO FORMAT SCREEN PRESENTATION */
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-  }
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+/* BACKGROUND VIDEO FORMATING */
 #bg-video {
   position: fixed;
   top: 0;
@@ -14,62 +17,69 @@ body {
   z-index: -1;
   opacity: 50%;
 }
-  
-  .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding: 1vh;
-  }
 
-  .hover-menu-elements {
-    font-size: 2vh;
-    padding-right: 20px;
-    color: white;
-    transition: font-size 0.5s ease-in-out;
-  }
-  
-  .hover-menu-elements:hover {
-    font-size: 3vh;
-  }
-  
-  .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .page-container {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 10px solid ;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    width: 80%;
-    height: 80%;
-    overflow: hidden;
-  }
+/* VIDEO BACKGROUND FOR SUB PAGE OR THE SMALLER CONTAINER SCREEN IN THE MIDDLE */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 1vh;
+}
+
+/* CONTAINER STYLE */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* THE SUB PAGE STYLING IN THE MIDDLE OF THE SCREEN */
+.page-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 10px solid ;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+}
 
 
-  .about-me-container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height:100%;
-  }
+.about-me-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height:100%;
+}
 
-  .hover-div {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transition: all 0.5s ease-in-out;
-  }
+/* BASIC HOVER ANIMATIONS */
+
+/* FOR MENU NAVIGATION BAR */
+.hover-menu-elements {
+  font-size: 2vh;
+  padding-right: 20px;
+  color: white;
+  transition: font-size 0.5s ease-in-out;
+}
   
-  .hover-div:hover {
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  }
+.hover-menu-elements:hover {
+  font-size: 3vh;
+}
+
+/* FOR CARD LINKS TO GITHUB AND LINKEDIN */
+.hover-div {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.5s ease-in-out;
+}
+  
+.hover-div:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
 
   
 
